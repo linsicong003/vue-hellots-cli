@@ -15,10 +15,10 @@ vhc init 项目名
 ## 快速命令
 ```javascript
 快速生成 src 文件夹下的模板文件
-node tep
+yarn tep 或 npm run tep
 
 快速添加功能模块
-node addone  
+yarn addone xxx 或 npm run addone xxx  
 ```
 ## 模板地址
 > <https://gitlab.deeptel.com.cn/linsicong/vue-ts-template>
