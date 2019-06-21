@@ -49,3 +49,12 @@ node addone
 
 目前变量命名方式全为小驼峰。
 
+## 可能错误
+
+- 报 sass 依赖错误
+>Node Sass could not find a binding for your current environment: W indows 64-bit with Node.js 10.x
+
+问题原因: node-sass 库在安装依赖过程中发生错误
+
+解决方法: npm rebuild node-sass
+
