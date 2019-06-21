@@ -1,9 +1,9 @@
+#!/usr/bin/env node
 /*
 *  @Description: A TypeScript template with Vue
 *  @Operation:  Use init xxx to cearte your project
 *  @Template repo: https://gitlab.deeptel.com.cn:linsicong/vue-ts-template
 * */
-
 // 处理输入命令
 const program = require('commander');
 // 从仓库下载
@@ -13,13 +13,17 @@ const inquirer = require('inquirer');
 // 模板渲染
 const handlerbars = require('handlebars');
 // 下载动画
-const ora = require('ora')
+const ora = require('ora');
 // 字体颜色
-const chalk = require('chalk')
+const chalk = require('chalk');
 // 图标显示
-const symbols = require('log-symbols')
+const symbols = require('log-symbols');
 // 文件处理
-const fs = require('fs')
+const fs = require('fs');
+// 目录
+const path = require('path')
+// 根目录
+const basePath = path.resolve('')
 
 program.version('1.0.0', '-v, --version')
 	.command('init <name>')
@@ -36,25 +40,25 @@ program.version('1.0.0', '-v, --version')
 			]).then((answers) => {
 				const spinner = ora('Preparing the project...');
 				spinner.start();
-				download('https://gitlab.deeptel.com.cn:linsicong/vue-ts-template#master', name, {clone: true}, (err) => {
+				download('https://gitlab.deeptel.com.cn:linsicong/vue-ts-template#master', `${basePath}\\${name}`, {clone: true}, (err) => {
 					if (err) {
 						spinner.fail();
 						console.log(symbols.error, chalk.red(err));
-						process.exit(0)
+						// process.exit(0)
 					} else {
 						spinner.succeed();
 						const meta = {
 							name,
 							...answers
 						}
-						const fileName = `${name}/package.json`;
+						const fileName = `${basePath}\\${name}/package.json`;
 						if (fs.existsSync(fileName)) {
 							const content = fs.readFileSync(fileName).toString();
 							const result = handlerbars.compile(content)(meta);
 							fs.writeFileSync(fileName, result);
 						}
-						console.log(symbols.success, chalk.green(`Created ${name} successfully !!`));
-						process.exit(0)
+						console.log(symbols.success, chalk.green(`Created ${basePath}\\${name} successfully !!`));
+						// process.exit(0)
 					}
 				})
 			})
@@ -62,7 +66,7 @@ program.version('1.0.0', '-v, --version')
 			// 错误提示项目已存在，避免覆盖原有项目
 			console.log(symbols.error, chalk.red('Project already exist!'));
 			console.log(symbols.warning, chalk.red('Please delete it at first or use the other project name'));
-			process.exit(0)
+			// process.exit(0)
 		}
 	});
 program.parse(process.argv);
