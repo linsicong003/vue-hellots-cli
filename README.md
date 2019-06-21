@@ -10,15 +10,15 @@ vue-ts-cli 是在 vue-cli 的基础上进行进一步封装的开发模板
 yarn add vue-hellots-cli 或 npm install vue-hellots-cli -s
 
 使用
-vue-hellots-cli 项目名 
+vhc init 项目名 
 ```
 ## 快速命令
 ```javascript
 快速生成 src 文件夹下的模板文件
-yarn tep 或 npm run tep 
+node tep
 
 快速添加功能模块
-yarn addone 或 npm run addone   
+node addone  
 ```
 ## 模板地址
 > <https://gitlab.deeptel.com.cn/linsicong/vue-ts-template>
