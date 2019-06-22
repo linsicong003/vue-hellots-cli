@@ -1,5 +1,5 @@
 # Vue + TypeScript 启动脚手架
-vue-ts-cli 是在 vue-cli 的基础上进行进一步封装的开发模板
+vue-hellots-cli 是在 vue-cli 的基础上进行进一步封装的开发模板
 
 集成 Vuex的支持。
 
