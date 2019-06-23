@@ -21,7 +21,7 @@ yarn tep 或 npm run tep
 yarn addone xxx 或 npm run addone xxx  
 ```
 ## 模板地址
-> <https://gitlab.deeptel.com.cn/linsicong/vue-ts-template>
+> <https://github.com/linsicong003/vue-ts-template>
 ## 目录结构
 
 ```bash
