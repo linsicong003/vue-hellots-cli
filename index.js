@@ -2,7 +2,7 @@
 /*
 *  @Description: A TypeScript template with Vue
 *  @Operation:  Use init xxx to cearte your project
-*  @Template repo: https://gitlab.deeptel.com.cn:linsicong/vue-ts-template
+*  @Template repo: https://github.com/linsicong003/vue-ts-template
 * */
 // 处理输入命令
 const program = require('commander');
@@ -40,16 +40,17 @@ program.version('1.0.0', '-v, --version')
 			]).then((answers) => {
 				const spinner = ora('Preparing the project...');
 				spinner.start();
-				download('https://gitlab.deeptel.com.cn:linsicong/vue-ts-template#master', `${basePath}\\${name}`, {clone: true}, (err) => {
+				download('https://github.com/linsicong003/vue-ts-template#master', `${basePath}\\${name}`, {clone: true}, (err) => {
 					if (err) {
 						spinner.fail();
 						console.log(symbols.error, chalk.red(err));
-						// process.exit(0)
 					} else {
 						spinner.succeed();
 						const meta = {
-							name,
-							...answers
+							name: name,
+							description: answers.description,
+							author: answers.author,
+							version: answers.version
 						}
 						const fileName = `${basePath}\\${name}/package.json`;
 						if (fs.existsSync(fileName)) {
@@ -58,7 +59,6 @@ program.version('1.0.0', '-v, --version')
 							fs.writeFileSync(fileName, result);
 						}
 						console.log(symbols.success, chalk.green(`Created ${basePath}\\${name} successfully !!`));
-						// process.exit(0)
 					}
 				})
 			})

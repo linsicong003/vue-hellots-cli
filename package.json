@@ -1,9 +1,9 @@
 {
   "name": "vue-hellots-cli",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "a ts cli with vue",
   "main": "./index.js",
-  "repository": "ssh://git@gitlab.deeptel.com.cn:1222/linsicong/vue-ts-cli.git",
+  "repository": "https://github.com/linsicong003/vue-hellots-cli.git",
   "author": "Clancy <clancy_lin@163.com>",
   "license": "MIT",
   "bin": {
