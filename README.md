@@ -1,5 +1,5 @@
 # Vue + TypeScript 启动脚手架
-vue-ts-cli 是在 vue-cli 的基础上进行进一步封装的开发模板
+vue-hellots-cli 是在 vue-cli 的基础上进行进一步封装的开发模板
 
 集成 Vuex的支持。
 
@@ -21,7 +21,7 @@ yarn tep 或 npm run tep
 yarn addone xxx 或 npm run addone xxx  
 ```
 ## 模板地址
-> <https://gitlab.deeptel.com.cn/linsicong/vue-ts-template>
+> <https://github.com/linsicong003/vue-ts-template>
 ## 目录结构
 
 ```bash
