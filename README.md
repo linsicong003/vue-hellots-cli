@@ -1,5 +1,5 @@
 # Vue + TypeScript 启动脚手架
-vue-hellots-cli 是在 vue-cli 的基础上进行进一步封装的开发模板
+vue-ts-cli 是在 vue-cli 的基础上进行进一步封装的开发模板
 
 集成 Vuex的支持。
 
@@ -15,10 +15,20 @@ vhc init 项目名
 ## 快速命令
 ```javascript
 快速生成 src 文件夹下的模板文件
-yarn tep 或 npm run tep
+yarn establish 或 npm run establish
 
-快速添加功能模块
+快速添加完整功能模块
 yarn addone xxx 或 npm run addone xxx  
+
+快速添加公用组件视图模板
+yarn component xxx 或 npm run component xxx
+
+快速添加视图模板
+yarn tep xxx xxx(模块名，可选) 或 npm run tep xxx xxx
+
++-- 示例
++-- yarn tep hello demo  此时模板路径为 src/views/demo/hello.vue
++-- yarn tep hello  此时模板路径为当前路径/hello.vue
 ```
 ## 模板地址
 > <https://github.com/linsicong003/vue-ts-template>
@@ -40,6 +50,7 @@ yarn addone xxx 或 npm run addone xxx
 +-- types                                    数据结构类型
 |   +-- store                                   数据仓库数据结构
 |   +-- views                                   视图层数据结构
+|   |   +-- component.interface.ts                模块数据结构入口  
 |   +-- index.ts                                总入口
 +-- utils                                    工具库
 +-- views                                    视图模板
@@ -57,4 +68,11 @@ yarn addone xxx 或 npm run addone xxx
 问题原因: node-sass 库在安装依赖过程中发生错误
 
 解决方法: npm rebuild node-sass
+
+- tslint warning 语法错误
+> Identifier 'err' is never reassigned; use 'const' instead of 'let'
+
+问题原因: 上述报错只是 warning 的其中一种，此问答包含所有 warning 情况
+
+解决方法: 命令行键入 yarn lint 或 npm run lint 执行自动修复操作
 
